@@ -1,3 +1,3 @@
-# language = c++
-# study website = https://www.acmicpc.net
+# Language = C++
+# Study Website = https://www.acmicpc.net
 # WooHyuck Jeon
