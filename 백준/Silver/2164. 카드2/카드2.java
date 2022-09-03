@@ -9,18 +9,19 @@ public class Main {
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
         int N = Integer.parseInt(br.readLine());
 
-        Queue<Integer> q = new LinkedList<>();
-        for (int i = 1; i <= N; ++i) q.add(i);
-
-        int i = 0;
-        while (q.size() != 1) {
-            if (i % 2 == 0) {
-                q.remove();
-            } else {
-                q.add(q.poll());
-            }
-            i++;
+        if (N == 1) {
+            System.out.println(1);
+            return;
         }
-        System.out.println(q.peek());
+
+        for (int i = 0;;++i) {
+            int start = (int)Math.pow(2, i - 1);
+            int end = (int)Math.pow(2, i);
+
+            if (N > start && N <= end) {
+                System.out.println(2 * (N - start));
+                break;
+            }
+        }
     }
 }
