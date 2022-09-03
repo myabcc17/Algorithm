@@ -8,21 +8,18 @@ public class Main {
         int N = Integer.parseInt(br.readLine());
 
         int answer = 5000;
-        for (int i = 0; i <= N / 5; ++i) {
-            if (i == 0 && (N % 3) == 0) {
-                if (answer > (N / 3)) {
-                    answer = N / 3;
-                }
-            } else if (i == N / 5 && N % 5 == 0) {
-                if (answer > N / 5) {
-                    answer = N / 5;
-                }
-            } else {
-                if ((N - (i * 5)) % 3 == 0) {
-                    int count = i + ((N - (i * 5)) / 3);
-                    if (answer > count) {
-                        answer = count;
-                    }
+        if (N % 3 == 0) {
+            answer = N / 3;
+        }
+        if (N % 5 == 0) {
+            answer = N / 5;
+        }
+
+        for (int i = 1; i <= N / 5; ++i) {
+            if ((N - (i * 5)) % 3 == 0) {
+                int count = i + ((N - (i * 5)) / 3);
+                if (answer > count) {
+                    answer = count;
                 }
             }
         }
